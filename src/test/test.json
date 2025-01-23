@@ -1,0 +1,154 @@
+create order req: {
+    "merCode": "M96620240924161327000862",
+    "merOrderId": "20250123124109",
+    "subMerCode": "",
+    "tranCode": "online_payin",
+    "payCode": "stcpay,cardpay,applepay",
+    "tradeAmt": "130",
+    "tradeCurrency": "SAR",
+    "expireTime": 30,
+    "callbackFrontUrl": "http://localhost:8080/pay/callback",
+    "productInfo": [
+        {
+            "productType": "physical",
+            "productName": "hua wei car",
+            "productSku": "23232323",
+            "productQuantity": 1,
+            "productPrice": "100",
+            "productCurrency": "SAR",
+            "productDescription": "TEST",
+            "photoUrl": "https://google.com"
+        },
+        {
+            "productType": "virtual",
+            "productName": "game coin",
+            "productSku": "g12345",
+            "productQuantity": 2,
+            "productPrice": "30",
+            "productCurrency": "SAR",
+            "productDescription": "TEST virtual",
+            "photoUrl": "https://baidu.com"
+        }
+    ],
+    "customerInfo": {
+        "customerUid": "1234-5637-2334-1233",
+        "customerName": "Mr heihei",
+        "customerPhone": "5001999921",
+        "customerEmail": "123456789@qq.com",
+        "customerPlateform": null
+    },
+    "deliverInfo": {
+        "firstName": "lala",
+        "lastName": "Mr",
+        "phone": "5001999921",
+        "country": "china",
+        "city": "beijing",
+        "address": "China beijing chaoyang",
+        "zipCode": "100000"
+    },
+    "orderMemo": null
+}
+
+create order resp: {
+    "merCode": "M96620240924161327000862",
+    "subMerCode": "",
+    "tradeStatus": "init",
+    "trdOrderId": "TRD202501231242060493",
+    "payUrl": "https://cashier-dev.gccpay.cn/en-US/order/TRD202501231242060493",
+    "tranCode": "online_payin",
+    "payCode": "applepay,cardpay,stcpay",
+    "merOrderId": "20250123124101"
+}
+
+inq tran req: {
+    "merCode": "M96620240924161327000862",
+    "trdOrderId": "TRD20241231131545000358",
+    "merOrderId": ""
+}
+
+inq tran resp: {
+    "merCode": "M96620240924161327000862",
+    "trdOrderId": "TRD20241231131545000358",
+    "merOrderId": "1735622144309",
+    "subMerCode": "",
+    "tranCode": "online_payin",
+    "payCode": "applepay",
+    "uploadTime": "2024-12-31 13:15:45",
+    "tranTime": "2024-12-31 13:17:21",
+    "tranStatus": "paid",
+    "tranMsg": "SUCCESS",
+    "tradeCurrency": "SAR",
+    "amountInfo": {
+        "tradeCurrency": "SAR",
+        "tradeAmt": "3000.00",
+        "tgtCurrency": "SAR",
+        "exchangeRateValue": "1.00",
+        "tgtTradeAmt": "3000.00"
+    },
+    "paymentInfo": {
+        "cardOrg": "VISA",
+        "cardNo": "506968xxxxxx9089",
+        "cardholderName": "",
+        "phone": ""
+    },
+    "refundInfo": {
+        "refundStatus": "init",
+        "refundAmt": "0.00",
+        "surplusAmt": "3000.00"
+    }
+}
+
+create refund req: {
+    "merCode": "M96620240924161327000862",
+    "merRefundOrderId": "20250123145601",
+    "origOrderId": "TRD20241231131545000358",
+    "refundOrderId": null,
+    "origMerOrderId": "",
+    "refundAmt": "100",
+    "refundCurrency": "SAR",
+    "refundMemo": "Test refund"
+}
+create refund resp: {
+    "merCode": "M96620240924161327000862",
+    "refundOrderId": "REF202501231515337154",
+    "merRefundOrderId": "20250123145601",
+    "refundAmt": "100.00000000",
+    "refundCurrency": "SAR",
+    "refundTime": "2025-01-23 15:15:33",
+    "refundAcqChannel": "MPGS_GIB",
+    "refundStatus": "pending",
+    "origTrdInfo": {
+        "origOrderId": "TRD20241231131545000358",
+        "origMerOrderId": "1735622144308",
+        "origTradeAmt": "3000.00",
+        "origTradeRefunded": "0.00",
+        "origTradeSurplusAmt": "3000.00"
+    }
+}
+
+inq refund req: {
+    "merCode": "M96620240924161327000862",
+    "refundOrderId": "REF202501231515337154",
+    "merRefundOrderId": ""
+}
+
+inq refund resp: {
+    "merCode": "M96620240924161327000862",
+    "refundOrderId": "REF202501231515337154",
+    "merRefundOrderId": "20250123145601",
+    "tranCode": "refund",
+    "payCode": "applepay",
+    "refundAmt": "100.00",
+    "refundCurrency": "SAR",
+    "uploadTime": "2025-01-23 15:15:33",
+    "refundTime": "2025-01-23 15:15:33",
+    "refundStatus": "init",
+    "refundMsg": "",
+    "origTrdInfo": {
+        "origOrderId": "TRD20241231131545000358",
+        "origMerOrderId": "1735622144309",
+        "origTradeAmt": "3000.000000",
+        "origTradeRefunded": "0.00000",
+        "origTradeSurplusAmt": "3000.000000"
+    }
+}
