@@ -8,6 +8,7 @@ import java.util.Base64;
  * AES 加解密工具类
  * */
 public class AESUtils {
+    private static final String AES_IV = "0000000000000000";
     /**
      * AES加密
      * @param content 需要加密的内容
@@ -20,7 +21,7 @@ public class AESUtils {
             SecretKeySpec secretKeySpec = new SecretKeySpec(key.getBytes(), "AES");
 
             // 使用指定的IV
-            IvParameterSpec ivParameterSpec = new IvParameterSpec(new byte[16]);
+            IvParameterSpec ivParameterSpec = new IvParameterSpec(AES_IV.getBytes());
 
             Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
             cipher.init(Cipher.ENCRYPT_MODE, secretKeySpec, ivParameterSpec);
@@ -43,7 +44,7 @@ public class AESUtils {
         try {
             byte[] encryptedBytes = Base64.getDecoder().decode(encryptedData);
             SecretKeySpec secretKeySpec = new SecretKeySpec(key.getBytes(), "AES");
-            IvParameterSpec ivParameterSpec = new IvParameterSpec(new byte[16]);
+            IvParameterSpec ivParameterSpec = new IvParameterSpec(AES_IV.getBytes());
 
             Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
             cipher.init(Cipher.DECRYPT_MODE, secretKeySpec, ivParameterSpec);
