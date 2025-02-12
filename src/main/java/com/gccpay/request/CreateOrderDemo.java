@@ -23,7 +23,7 @@ public class CreateOrderDemo {
         try {
             CreateOrderEntity createOrder = new CreateOrderEntity();
             createOrder.setMerCode("M96620240924161327000862");
-            createOrder.setMerOrderId("20250123124109");
+            createOrder.setMerOrderId("20250123124108448948");
             createOrder.setSubMerCode("");
             createOrder.setTranCode("online_payin");
             createOrder.setPayCode("stcpay,cardpay,applepay");
@@ -58,6 +58,7 @@ public class CreateOrderDemo {
 
             createOrder.getCustomerInfo().setCustomerUid("1234-5637-2334-1233");
             createOrder.getCustomerInfo().setCustomerName("Mr heihei");
+            createOrder.getCustomerInfo().setCustomerPlatform("wechat");
             createOrder.getCustomerInfo().setCustomerPhone("5001999921");
             createOrder.getCustomerInfo().setCustomerEmail("123456789@qq.com");
 

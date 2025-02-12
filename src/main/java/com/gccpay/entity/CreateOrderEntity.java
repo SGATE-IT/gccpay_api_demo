@@ -47,7 +47,7 @@ public class CreateOrderEntity {
         private String customerName;
         private String customerPhone;
         private String customerEmail;
-        private String customerPlateform;
+        private String customerPlatform;
 
     }
     @Data
