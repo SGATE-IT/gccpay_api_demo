@@ -11,7 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class InqRefundOrderEntity {
-    private String merCode;
+    private String merchantId;
     private String merRefundOrderId;
     private String refundOrderId;
 }

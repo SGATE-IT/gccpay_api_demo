@@ -12,11 +12,11 @@ import java.util.List;
 @AllArgsConstructor
 public class CreateRefundEntity {
 
-    private String merCode;
+    private String merchantId;
     private String merRefundOrderId;
     private String origOrderId;
     private String origMerOrderId;
     private BigDecimal refundAmt;
     private String refundCurrency;
-    private String refundMemo;
+    private String refundDesc;
 }

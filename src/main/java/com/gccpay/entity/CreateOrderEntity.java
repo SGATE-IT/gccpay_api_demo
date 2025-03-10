@@ -12,19 +12,19 @@ import java.util.List;
 @AllArgsConstructor
 public class CreateOrderEntity {
 
-    private String merCode;
+    private String merchantId;
     private String merOrderId;
-    private String subMerCode;
-    private String tranCode;
-    private String payCode;
-    private BigDecimal tradeAmt;
-    private String tradeCurrency;
+    private String subMerId;
+    private String orderType;
+    private String paymentType;
+    private BigDecimal orderAmt;
+    private String orderCurrency;
     private long expireTime;
-    private String callbackFrontUrl;
+    private String frontRedirectUrl;
     private List<ProductInfo> productInfo;
     private CustomerInfo customerInfo=new CustomerInfo();
-    private DeliverInfo deliverInfo=new DeliverInfo();
-    private String orderMemo;
+    private DeliverInfo deliveryInfo=new DeliverInfo();
+    private String orderDesc;
     @Data
     @NoArgsConstructor
     @AllArgsConstructor
@@ -33,10 +33,10 @@ public class CreateOrderEntity {
         private String productName;
         private String productSku;
         private Integer productQuantity;
-        private BigDecimal productPrice;
+        private BigDecimal productUnitPrice;
         private String productCurrency;
-        private String productDescription;
-        private String photoUrl;
+        private String productDesc;
+        private String productAvatarUrl;
     }
 
     @Data

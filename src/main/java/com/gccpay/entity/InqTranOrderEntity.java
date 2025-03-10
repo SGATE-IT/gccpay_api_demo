@@ -11,7 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class InqTranOrderEntity {
-    private String merCode;
+    private String merchantId;
     private String merOrderId;
-    private String trdOrderId;
+    private String orderId;
 }
