@@ -19,7 +19,7 @@ public class DownloadFileDemo {
     public static void main(String[] args) {
 
         String url= "http://127.0.0.1:7080/open-api/pay/merchant/downloadFile";
-        ResponseEntity<String> response = null;
+        ResponseEntity<byte[]> response = null;
         try {
            Map<String,Object> createOrder = new HashMap<>();
             createOrder.put("trdDate","test");
@@ -42,12 +42,12 @@ public class DownloadFileDemo {
             Map<String,String> map = new HashMap<>();
             map.put("aesBuffer",encrypt);
             HttpEntity<String> entity = new HttpEntity<>(JSONObject.toJSONString(map),headers);
-            response = restTemplate.exchange(url, HttpMethod.POST, entity, String.class);
+            response = restTemplate.exchange(url, HttpMethod.POST, entity, byte[].class);
             HttpStatus statusCode = response.getStatusCode();
-            System.out.println("resp statusCode:" + response.getBody());
+            //System.out.println("resp statusCode:" + response.getBody());
             String fileName = getFileNameFromContentDisposition(response.getHeaders());
             if (statusCode == HttpStatus.OK) {
-                byte[] fileBytes = response.getBody().getBytes();
+                byte[] fileBytes = response.getBody();
                 saveFile(fileBytes, "/resources/"+fileName);
                 System.out.println("File downloaded successfully.");
             } else {
